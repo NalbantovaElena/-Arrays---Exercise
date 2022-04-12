@@ -1,0 +1,7 @@
+function solve(firstArr, secondArr) {
+firstArr.forEach(element => {
+    if(secondArr.includes(element)){
+        console.log(element)
+    }
+});
+}
