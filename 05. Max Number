@@ -1,0 +1,13 @@
+function solve(input) {
+    let result = []
+   while(input.length!==0) {
+        let firstDigit = input.shift()
+        //console.log(`${firstDigit} firstdigit`)
+        let maxDigitArr = Math.max(...input)
+        //console.log(`${maxDigitArr} - maxDigitArr`)
+        if (firstDigit > maxDigitArr) {
+            result.push(firstDigit)
+        }
+    }
+    console.log(result.join(' '))
+}
