@@ -1,0 +1,30 @@
+function solve(input) {
+    let isBool = false;
+
+    for (let i = 0; i < input.length; i++) {
+        let leftArr = []
+        let rightArr = []
+        let leftSum = 0;
+        let rigthSum = 0;
+        for (let j = 0; j < i; j++) {
+            leftArr.push(input[j])
+
+        }
+        leftSum = leftArr.reduce((a, x) => a + x, 0)
+
+        for (let j = input.length - 1; j > i; j--) {
+            rightArr.push(input[j])
+        }
+        rigthSum = rightArr.reduce((a, x) => (a + x), 0)
+
+        //console.log(leftArr)
+        // console.log(rightArr)
+        if (leftSum === rigthSum) {
+            isBool = true
+            console.log(i)
+        }
+    }
+    if (isBool === false) {
+        console.log('no')
+    }
+}
