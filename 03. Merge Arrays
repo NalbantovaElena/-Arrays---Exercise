@@ -1,0 +1,14 @@
+function solve(firstArr, secondArr) {
+    let arr = []
+
+    for (let i = 0; i < firstArr.length; i++) {
+        if (i % 2 === 0) {
+            let sum = Number(firstArr[i]) + Number(secondArr[i])
+            arr.push(sum)
+        } else {
+            let concatStr = firstArr[i] + secondArr[i]
+            arr.push(concatStr)
+        }
+    }
+    console.log(arr.join(' - '))
+}
