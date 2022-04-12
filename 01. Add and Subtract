@@ -1,0 +1,18 @@
+function solve(input) {
+    let arr = []
+    for (let index in input)
+        if (input[index] % 2 === 0) {
+            //console.log(typeof(index))
+            let evenDigit = Number(input[index]) + Number(index);
+            arr.push(evenDigit)
+        } else if (input[index] % 2 !== 0) {
+            let oddDigit = Number(input[index]) - Number(index);
+            arr.push(oddDigit)
+        }
+    
+    console.log(arr)
+    let sumOriginalArr = input.reduce((previousValue, currentValue,) => previousValue + currentValue)
+    console.log(sumOriginalArr)
+    let sumModifiedArr = arr.reduce((previousValue, currentValue) => previousValue + currentValue)
+    console.log(sumModifiedArr)
+}
