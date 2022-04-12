@@ -1,0 +1,38 @@
+function solve(input) {
+    let array = []
+    let arr = []
+    let resultArr = []
+    let count = 0;
+    let maxLength = [];
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === input[i + 1]) {
+            count++
+
+            if (count === 1) {
+                array.push(input[i], input[i + 1])
+                //arr.push(input[i], input[i + 1])
+
+            } else {
+                array.push(input[i])
+                //arr.push(input[i])
+            }
+
+        } else {
+            count = 0
+            resultArr.push(array)
+            array = []
+        }
+    }
+    //console.log(resultArr)
+    resultArr.forEach(element => {
+        arr.push(element.length)
+
+    })
+    let max = arr.reduce((a, x) => Math.max(a, x))
+    resultArr.forEach(el => {
+        if (el.length === max) {
+            maxLength.push(el)
+        }
+    })
+    console.log(maxLength[0].join(' '))
+}
